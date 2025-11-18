@@ -27,15 +27,28 @@ def main():
         screen.blit(bg_img, [-x + 3200, 0])
         kk_rct.move_ip(-1, 0)
 
+        dx, dy = 0, 0
+
         key_list = pg.key.get_pressed()
         if key_list[pg.K_UP]:
-            kk_rct.move_ip((0, -1))
+            dy -= 1
         if key_list[pg.K_DOWN]:
-            kk_rct.move_ip((0, +1))
+            dy += 1
         if key_list[pg.K_RIGHT]:
-            kk_rct.move_ip((+2, 0))
+            dx += 2
         if key_list[pg.K_LEFT]:
-            kk_rct.move_ip((-1, 0))
+            dx -= 1
+
+        kk_rct.move_ip(dx, dy)
+        # if dx == 2:
+        #     dx -= 2
+        # if dx == -1:
+        #     dx += 1
+        # if dy == 1:
+        #     dy -= 1
+        # if dy == -1:
+        #     dy += 1
+
         screen.blit(koukaton_img, kk_rct)
         pg.display.update()
         tmr += 1        
