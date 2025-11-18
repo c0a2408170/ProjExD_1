@@ -25,6 +25,7 @@ def main():
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img2, [-x + 1600, 0])
         screen.blit(bg_img, [-x + 3200, 0])
+        kk_rct.move_ip(-1, 0)
 
         key_list = pg.key.get_pressed()
         if key_list[pg.K_UP]:
@@ -32,7 +33,7 @@ def main():
         if key_list[pg.K_DOWN]:
             kk_rct.move_ip((0, +1))
         if key_list[pg.K_RIGHT]:
-            kk_rct.move_ip((+1, 0))
+            kk_rct.move_ip((+2, 0))
         if key_list[pg.K_LEFT]:
             kk_rct.move_ip((-1, 0))
         screen.blit(koukaton_img, kk_rct)
